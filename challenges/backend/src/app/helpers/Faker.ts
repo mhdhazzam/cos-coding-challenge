@@ -1,7 +1,7 @@
 import faker from 'faker';
 
 
-export const fakeBuyerAuctionsResponse = ({}, count = 1) => {
+export const fakeBuyerAuctionsResponse = ({ distance }: { distance?: number;}, count = 1) => {
   let fakeArray = [];
   for (let index = 0; index < count; index++) {
     fakeArray.push({
@@ -75,7 +75,7 @@ export const fakeBuyerAuctionsResponse = ({}, count = 1) => {
       remainingTimeForInstantPurchaseInSeconds: null,
       isRejectionWaitPeriodOver: false,
       amIRegularBuyer: true,
-      distanceToVehicleInKms: 4041,
+      distanceToVehicleInKms: distance ? distance + (index+1)*100 : 4041,
       isMinAskReached: false,
       enforceTransportation: false,
       isTransportationAvailable: true,
