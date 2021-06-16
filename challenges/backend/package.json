@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "npx ts-node src/app/main.ts",
-    "test": "./node_modules/.bin/mocha --require ts-node/register ./src/**/*.spec.ts"
+    "test": "./node_modules/.bin/mocha --require ts-node/register ./src/**/*.spec.ts  --reporter mochawesome --reporter-options reportDir=test-report,reportFilename=cos-test"
   },
   "author": "",
   "license": "ISC",
@@ -25,6 +25,7 @@
     "@types/chai": "^4.2.18",
     "@types/faker": "^5.5.6",
     "@types/mocha": "^8.2.2",
-    "@types/sinon": "^10.0.2"
+    "@types/sinon": "^10.0.2",
+    "mochawesome": "^6.2.2"
   }
 }
