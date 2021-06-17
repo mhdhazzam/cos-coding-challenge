@@ -1,0 +1,6 @@
+baseUrl: https://api-core-dev.caronsale.de
+authenticateUserApi: /api/v1/authentication/
+getBuyerAuctionApi: /api/v2/auction/buyer/
+userCredentials:
+  emailId: salesman@random.com
+  password: 123test
