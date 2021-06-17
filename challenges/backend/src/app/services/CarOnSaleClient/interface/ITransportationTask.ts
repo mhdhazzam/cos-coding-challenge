@@ -1,0 +1,32 @@
+export interface ITransportationTask {
+    id: number;
+    netPrice: number;
+    grossPrice: number;
+    state: number;
+    _fk_associatedAuction: number;
+    _fk_associatedBuyer: number;
+    createdAt: Date;
+    updatedAt: Date;
+    distanceInKm: number;
+    internalNetPrice: number;
+    bookedAt?: Date;
+    _fk_transportationProvider?: number;
+    assignedAt?: Date;
+    urlToHandoverProtocolDocument?: string;
+    discountedNetPrice: number;
+    invoiceReference?: unknown;
+    _fk_uuid_auction?: string;
+    _fk_uuid_buyerUser?: string;
+    _fk_uuid_transportationProvider?: string;
+    uuid?: string;
+    earliestPickupDate?: Date;
+    note?: string;
+    _fk_associatedSeller?: number;
+    _fk_uuid_sellerUser?: string;
+    _fk_associatedVehicle?: number;
+    _fk_uuid_associatedVehicle?: string;
+    urlToSignedPickUpAuthorizationDocument?: string;
+    estimatedPickupDate?: Date;
+    estimatedDeliveryDate?: Date;
+    deletedAt?: Date;
+}
