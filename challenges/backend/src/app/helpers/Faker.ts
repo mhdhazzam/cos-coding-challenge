@@ -1,15 +1,16 @@
 import faker from 'faker';
+import { IBuyerAuction } from '../services/CarOnSaleClient/interface/IBuyerAuction';
 
 
-export const fakeBuyerAuctionsResponse = ({ distance }: { distance?: number;}, count = 1) => {
-  let fakeArray = [];
+export const fakeBuyerAuctionsResponse = ({ distance }: { distance?: number;}, count = 1) : IBuyerAuction[] => {
+  let fakeArray: IBuyerAuction[] = [];
   for (let index = 0; index < count; index++) {
     fakeArray.push({
       id: faker.datatype.number({ min: 1 }),
       label: faker.vehicle.model(),
       state: 2,
       sellerType: 0,
-      endingTime: "2021-06-16T10:44:44.587Z",
+      endingTime: new Date("2021-06-16T10:44:44.587Z"),
       minimumRequiredAsk: 18110,
       currentHighestBidValue: 390,
       numBids: 0,
@@ -18,9 +19,9 @@ export const fakeBuyerAuctionsResponse = ({ distance }: { distance?: number;}, c
       locationAddress: null,
       locationCity: "",
       locationZip: "80xxx",
-      startedAt: "2021-06-15T08:42:46.707Z",
-      createdAt: "2021-06-15T08:42:46.400Z",
-      updatedAt: "2021-06-15T08:42:47.712Z",
+      startedAt: new Date("2021-06-15T08:42:46.707Z"),
+      createdAt: new Date("2021-06-15T08:42:46.400Z"),
+      updatedAt: new Date("2021-06-15T08:42:47.712Z"),
       hotBid: true,
       originalMinimumRequiredAsk: null,
       incomingPaymentConfirmedAt: null,
@@ -82,7 +83,38 @@ export const fakeBuyerAuctionsResponse = ({ distance }: { distance?: number;}, c
       amIHighestBidder: false,
       sellerContact: null,
       rating: null,
-      transportationTask: null,
+      transportationTask: {
+        id: 4858,
+        netPrice: 395,
+        grossPrice: 470,
+        state: 1,
+        _fk_associatedAuction: 16461,
+        _fk_associatedBuyer: 1,
+        createdAt: new Date("2021-06-10T19:09:58.600Z"),
+        updatedAt: new Date("2021-06-10T19:09:58.641Z"),
+        distanceInKm: 666,
+        internalNetPrice: 0,
+        bookedAt: null,
+        _fk_transportationProvider: null,
+        assignedAt: null,
+        urlToHandoverProtocolDocument: null,
+        discountedNetPrice: 359,
+        invoiceReference: null,
+        _fk_uuid_auction: "e75a76a0-9014-4935-a250-3ddc5fec0c2a",
+        _fk_uuid_buyerUser: "ce5e3d7f-3a3d-4fde-96bc-986d5f483df8",
+        _fk_uuid_transportationProvider: null,
+        uuid: "681cb79e-2b24-4d7c-bb4e-065518e4167e",
+        earliestPickupDate: null,
+        note: null,
+        _fk_associatedSeller: null,
+        _fk_uuid_sellerUser: null,
+        _fk_associatedVehicle: null,
+        _fk_uuid_associatedVehicle: null,
+        urlToSignedPickUpAuthorizationDocument: null,
+        estimatedPickupDate: null,
+        estimatedDeliveryDate: null,
+        deletedAt: null
+      },
       isTransportationAllowedForRegion: true,
       isExternalPaymentAllowed: true,
       pickupPinCode: null,
@@ -143,8 +175,8 @@ export const fakeBuyerAuctionsResponse = ({ distance }: { distance?: number;}, c
         uuid: faker.datatype.uuid(),
         origin: -1,
         dataSource: -1,
-        createdAt: "2021-06-15T08:42:46.343Z",
-        updatedAt: "2021-06-15T08:42:48.221Z",
+        createdAt: new Date("2021-06-15T08:42:46.343Z"),
+        updatedAt: new Date("2021-06-15T08:42:48.221Z"),
         deletedAt: null,
         lastServiceInspectionDate: "10/1891",
         lastServiceInspectionMileage: 235344,
@@ -183,7 +215,8 @@ export const fakeBuyerAuctionsResponse = ({ distance }: { distance?: number;}, c
         ],
         tires: [],
         paintState: [],
-        technicalState: []
+        technicalState: [],
+    
     }
     });
   }
